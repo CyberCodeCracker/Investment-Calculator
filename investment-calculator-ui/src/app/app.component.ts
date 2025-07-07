@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ResultModel } from './models/result.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'investment-calculator-ui';
+
+  results: ResultModel[] = [];
+
+  handleResults(data: ResultModel[]) {
+    this.results = data;
+    console.log("results received", this.results);
+  }
 }

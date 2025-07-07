@@ -1,1 +1,35 @@
-<p>calculator works!</p>
+<form (ngSubmit)="onSubmitForm()" class="form-group">
+  <section>
+    <div class="investment-section">
+      <div>
+        <label for="initial-investment">INITIAL INVESTMENT</label>
+        <input type="number" id="initial-investment" name="initialInvestment" [(ngModel)]="initialInvestment" required>
+      </div>
+      <div>
+        <label for="annual-investment">ANNUAL INVESTMENT</label>
+        <input type="number" id="annual-investment" name="annualInvestment" [(ngModel)]="annualInvestment" required>
+      </div>
+    </div>
+    <div class="return-section">
+      <div>
+        <label for="expected-return">EXPECTED RETURN</label>
+        <input type="number" id="expected-return" name="expectedReturn" [(ngModel)]="expectedReturn" required>
+      </div>
+      <div>
+        <label for="duration">DURATION</label>
+        <input type="number" id="duration" name="duration" [(ngModel)]="duration" required>
+      </div>
+    </div>
+    <div class="config-section">
+      <div>
+        <label for="date">STARTING DATE</label>
+        <input type="date" id="expected-return" name="startingDate" [(ngModel)]="startingDate" required>
+      </div>
+      <div>
+        <label for="duration">EARNING PERCENTAGE</label>
+        <input type="number" id="duration" name="approximateEarningPercentage" [(ngModel)]="approximateEarningPercentage" required>
+      </div>
+    </div>
+  </section>
+  <button type="submit">CALCULATE</button>         
+</form>

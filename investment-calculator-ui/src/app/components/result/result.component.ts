@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ResultModel } from 'src/app/models/result.model';
 
 @Component({
   selector: 'app-result',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ResultComponent {
 
+  @Input() results!: ResultModel[];
+  
 }

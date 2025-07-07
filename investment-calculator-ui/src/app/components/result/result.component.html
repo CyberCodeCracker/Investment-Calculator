@@ -1,1 +1,34 @@
-<p>result works!</p>
+<div class="result-wrapper" *ngIf="results.length > 0">
+  <h3>Investment Results</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Year</th>
+        <th>Initial Investment</th>
+        <th>Investment Value</th>
+        <th>Total Interest</th>
+        <th>Total Investment</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.index }}</td>
+        <td>{{ result.year }}</td>
+        <td>{{ result.initialInvestment | currency }}</td>
+        <td>{{ result.investmentValue }}</td>
+        <td>{{ result.totalInterest | currency }}</td>
+        <td>{{ result.totalInvestment | currency }}</td>
+        <td>
+          <span *ngIf="result.isTargetReached; else notReached">
+            🎯 Target Reached
+          </span>
+          <ng-template #notReached>
+            ❌ Not Reached
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
