@@ -1,3 +1,14 @@
+@keyframes fadeInForm{
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -10,7 +21,7 @@
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   background-color: #eae0f7;
-}
+  animation: fadeInForm 0.9s ease-out}
 
 section {
   display: flex;
